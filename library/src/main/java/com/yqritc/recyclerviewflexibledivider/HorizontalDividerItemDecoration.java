@@ -59,6 +59,10 @@ public class HorizontalDividerItemDecoration extends FlexibleDividerDecoration {
         } else {
             // set center point of divider
             int halfSize = dividerSize / 2;
+            if (halfSize == 0) {
+                //fix dividerSize 1px
+                halfSize = 1;
+            }
             if (isStart) {
                 bounds.top = child.getTop() - params.topMargin - halfSize + transitionY;
             } else {
